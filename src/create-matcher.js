@@ -34,7 +34,7 @@ export function createMatcher (
     if (name) {
       const record = nameMap[name]
       if (process.env.NODE_ENV !== 'production') {
-        warn(record, `Route with name '${name}' does not exist`)
+        warn(record, `Route with name '${name}' does not exist. Did you unintentionally swap "name" and "path" properties?`)
       }
       if (!record) return _createRoute(null, location)
       const paramNames = record.regex.keys
